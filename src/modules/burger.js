@@ -13,35 +13,14 @@ const burger = () => {
     `;
   document.head.append(style);
 
-  const menu = document.querySelector(".top-menu");
-  const getCoords = elem => {
-    const box = elem.getBoundingClientRect(),
-      body = document.body,
-      docEl = document.documentElement,
-      scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop,
-      clientTop = docEl.clientTop || body.clientTop || 0,
-      top = box.top + scrollTop - clientTop;
-    return top;
-  };
-  const menuStartCoords = getCoords(menu);
-  const fixMenu = () => {
-    const Y = window.scrollY;
-    if (Y >= menuStartCoords) {
-      menu.classList.add("top_fixed");
-    } else if (Y <= menuStartCoords) {
-      menu.classList.remove("top_fixed");
-    }
-  };
-  if (window.innerWidth < 768) {
-    window.addEventListener("scroll", fixMenu);
-  }
-  window.addEventListener("resize", () => {
-    if (window.innerWidth < 768) {
-      window.addEventListener("scroll", fixMenu);
-    }
+  window.addEventListener("scroll", () => {
+    const topMenu = document.querySelector(".top-menu");
+    const x = window.innerWidth;
 
-    if (window.innerWidth > 768) {
-      window.removeEventListener("scroll", fixMenu);
+    if (window.pageYOffset > 190 && x < 768) {
+      topMenu.style.position = "fixed";
+    } else {
+      topMenu.style.position = "";
     }
   });
 
