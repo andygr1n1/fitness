@@ -10,22 +10,6 @@ const burger = () => {
     width: 100% !important;
     animation: fixedMenu 0.4s forwards !important;
     }
-
-    @keyframes fixedMenu {
-        0% {
-            height: 0 !important;
-        }
-
-        50% {
-            top: 10px !important;
-            height: 60px !important;
-        }
-
-        100% {
-            top: 0px !important;
-            height: 60px !important;
-        }
-    }
     `;
   document.head.append(style);
 
