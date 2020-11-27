@@ -43,6 +43,8 @@ elementClosest(window);
 
 import carousel from "./modules/carousel.js";
 import burger from "./modules/burger.js";
+import photoGallery from "./modules/photoGallery.js";
 
 carousel(); //9
+photoGallery();
 burger(); //14, 15, 16
