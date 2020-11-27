@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ru" id="mozaika">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Сеть фитнес клубов Тело - Мозаика</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/style.min.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+<header class="header-main">
+    <div class="head">
+        <div class="wrapper">
+            <div class="head-main">
+                <div class="left">
+                    <div class="logo">
+                        <a href="index.html"><img src="images/logo.png" alt="Сеть фитнес клубов Тело"></a>
+                    </div>
+                    <div class="club-select">
+                        <div class="clubs-list">
+                            <p>Выбрать клуб</p>
+                            <ul>
+                                <li><a href="mozaika.html">Тело мозаика</a></li>
+                                <li><a href="schelkovo.html">Тело щелково</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="free-visit">
+                        <img src="images/head-icon.png" alt="">
+                        <p><a href="#" class="open-popup" data-popup="#free_visit_form">Записаться на <br>бесплатный
+                            визит</a></p>
+                    </div>
+                    <div class="call">
+                        <div class="our-phone">
+                            <span>Звоните круглосуточно!</span>
+                            <p>+7 (800) 555-64-47</p>
+                        </div>
+                        <button class="btn callback-btn" data-popup="#callback_form">Перезвоните мне</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="top-menu">
+        <div class="wrapper">
+            <ul class="hidden-small">
+                <li class="scroll"><a href="#clubs">Клубы</a></li>
+                <li class="scroll"><a href="#services">Услуги</a></li>
+                <li class="scroll"><a href="#cards">Клубные карты</a></li>
+                <li class=""><a href="#table">Расписание</a></li>
+                <li class="scroll"><a href="#gallery">Галерея</a></li>
+                <li class="scroll"><a href="#footer">Контакты</a></li>
+            </ul>
+            <div class="menu-button hidden-large">
+                <img src="images/menu-button.png" alt="">
+            </div>
+        </div>
+    </nav>
+    <nav class="popup-menu hidden-large">
+        <div class="close-menu-btn">
+            <img src="images/delete.png" alt="">
+        </div>
+        <ul>
+            <li class="scroll"><a href="#clubs">Клубы</a></li>
+            <li class="scroll"><a href="#services">Услуги</a></li>
+            <li class="scroll"><a href="#cards">Клубные карты</a></li>
+            <li class=""><a href="#table">Расписание</a></li>
+            <li class="scroll"><a href="#gallery">Галерея</a></li>
+            <li class="scroll"><a href="#footer">Контакты</a></li>
+        </ul>
+    </nav>
+    <div class="head-slider">
+        <div class="wrapper">
+            <div class="main-slider">
+                <div class="slide">
+                    <div class="slide-text">
+                        <div class="offer-head">
+                            <p class="top">2 круглосуточные</p>
+                            <p class="middle">клубные карты</p>
+                            <p class="bottom">за 25 000<span>i</span></p>
+                        </div>
+                        <div class="validity">
+                            <p>Только до 31 августа!<br>
+                                Закажите карту по телефону:</p>
+                            <span>+7 (800) 555-64-47</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide type2" style="display: none">
+                    <div class="slide-text">
+                        <div class="offer-head">
+                            <p class="top">открытый чемпионат</p>
+                            <p class="middle">по бодибилдингу</p>
+                            <p class="bottom">приз 200 000<span>i</span></p>
+                        </div>
+                        <div class="validity">
+                            <p>записаться
+                                для участия:</p>
+                            <span>+7 (800) 555-64-47</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" style="display: none">
+                    <div class="slide-text">
+                        <div class="offer-head">
+                            <p class="top">без выходных</p>
+                            <p class="middle">круглосуточно</p>
+                            <p class="bottom">Бассейн</p>
+
+                        </div>
+                        <div class="validity">
+                            <p> Записаться по телефону:
+                            </p>
+                            <span>+7 (800) 555-64-47</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide type2 type3" style="display: none">
+                    <div class="slide-text">
+                        <div class="offer-head">
+                            <p class="top">Круглосуточно</p>
+                            <p class="middle">Тренажерный зал</p>
+                            <p class="bottom">без выходных</p>
+                        </div>
+                        <div class="validity">
+                            <p> Записаться по телефону:
+                            </p>
+                            <span>+7 (800) 555-64-47</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide type2"  style="display: none">
+                    <div class="slide-text">
+                        <div class="offer-head">
+                            <p class="top">Пробное занятие</p>
+                            <p class="middle">ЙОГА / ПИЛАТЕС</p>
+                            <p class="bottom">БЕСПЛАТНО</p>
+                        </div>
+                        <div class="validity">
+                            <p>Только до 11 сентября!<br>
+                                Записаться по телефону:</p>
+                            <span>+7 (800) 555-64-47</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+<div class="breadcrumbs">
+    <div class="wrapper">
+        <p>
+            <a href="index.html">Главная</a>
+            <a href="index.html#clubs">Клубы</a>
+            Тело «Мозаика»
+        </p>
+    </div>
+</div>
+<section id="leto-mozaika" class="about-club">
+    <div class="wrapper">
+        <div class="left">
+            <div class="image">
+                <img src="images/leto-mozaika-bg.png" alt="">
+                <div class="club-head">
+                    <a href="mozaika.html"><h3>Тело Мозаика</h3></a>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="list">
+                <img src="images/about-club-icons/icon1.png" alt="">
+                <div class="text">
+                    <h6>«Тело» в ТРЦ «Мозаика»</h6>
+                    Россия, Москва, 7-я Кожуховская ул., 9
+                </div>
+            </div>
+            <div class="list">
+                <img src="images/about-club-icons/icon2.png" alt="">
+                <div class="text">
+                    <h6>Часы работы:</h6>
+                    ПН-ВС: круглосуточно
+                </div>
+            </div>
+            <div class="list">
+                <img src="images/about-club-icons/icon3.png" alt="">
+                <div class="text">
+                    <h6>Единый телефон:</h6>
+                    +7 (800) 555-64-47
+                </div>
+            </div>
+            <div class="list">
+                <img src="images/about-club-icons/icon4.png" alt="">
+                <div class="text">
+                    <h6>E-mail:</h6>
+                    sell@letofit.ru
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="advantages hidden-small" id="table">
+    <div class="wrapper">
+        <div class="advantage">
+            <div class="image"><img src="images/about-club-icons/icon5.png" alt=""></div>
+            <div class="text">Общая площадь<br> 1500 м2</div>
+        </div>
+        <div class="advantage">
+            <div class="image"><img src="images/about-club-icons/icon6.png" alt=""></div>
+            <div class="text">Тренажерный зал<br> 1000 м2</div>
+        </div>
+        <div class="advantage">
+            <div class="image"><img src="images/about-club-icons/icon7.png" alt=""></div>
+            <div class="text">Груп. программы<br> (2 зала)</div>
+        </div>
+        <div class="advantage">
+            <div class="image"><img src="images/about-club-icons/icon8.png" alt=""></div>
+            <div class="text">СПА Зона</div>
+        </div>
+        <div class="advantage">
+            <div class="image"><img src="images/about-club-icons/icon9.png" alt=""></div>
+            <div class="text">Кроссфит</div>
+        </div>
+        <div class="advantage">
+            <div class="image"><img src="images/about-club-icons/icon10.png" alt=""></div>
+            <div class="text">Фитнес бар</div>
+        </div>
+        <div class="advantage">
+            <div class="image"><img src="images/about-club-icons/icon11.png" alt=""></div>
+            <div class="text">Массажный<br> кабинет</div>
+        </div>
+    </div>
+</div>
+<div class="advantages-slider hidden-large">
+    <div class="wrapper">
+        <div id="adv-slider">
+            <div class="advantage">
+                <div class="image"><img src="images/about-club-icons/icon5.png" alt=""></div>
+                <div class="text">Общая площадь<br> 1500 м2</div>
+            </div>
+            <div class="advantage">
+                <div class="image"><img src="images/about-club-icons/icon6.png" alt=""></div>
+                <div class="text">Тренажерный зал<br> 1000 м2</div>
+            </div>
+            <div class="advantage">
+                <div class="image"><img src="images/about-club-icons/icon7.png" alt=""></div>
+                <div class="text">Груп. программы<br> (2 зала)</div>
+            </div>
+            <div class="advantage">
+                <div class="image"><img src="images/about-club-icons/icon8.png" alt=""></div>
+                <div class="text">СПА Зона</div>
+            </div>
+            <div class="advantage">
+                <div class="image"><img src="images/about-club-icons/icon9.png" alt=""></div>
+                <div class="text">Кроссфит</div>
+            </div>
+            <div class="advantage">
+                <div class="image"><img src="images/about-club-icons/icon10.png" alt=""></div>
+                <div class="text">Фитнес бар</div>
+            </div>
+            <div class="advantage">
+                <div class="image"><img src="images/about-club-icons/icon11.png" alt=""></div>
+                <div class="text">Массажный<br> кабинет</div>
+            </div>
+        </div>
+    </div>
+</div>
+<section id="cards">
+    <div class="wrapper">
+        <h2>выбрать карту</h2>
+        <form action="" id="card_order">
+            <div class="cards-types">
+                <input id="t1" type="radio" name="card-type" value="1s" checked>
+                <label for="t1"><span class="long">1 месяц</span><br><span class="solo">- соло -</span><br><span
+                        class="cost">1999<span class="rubl">i</span></span><br><span
+                        class="frost">* Без заморозки</span></label>
+                <input id="t2" type="radio" name="card-type" value="6s">
+                <label for="t2"><span class="long">6 месяцев</span><br><span class="solo">- соло -</span><br><span
+                        class="cost">9900<span class="rubl">i</span></span><br><span
+                        class="frost">* Без заморозки</span></label>
+                <input id="t3" type="radio" name="card-type" value="9s">
+                <label for="t3"><span class="long">9 месяцев</span><br><span class="solo">- соло -</span><br><span
+                        class="cost">13900<span class="rubl">i</span></span><br><span
+                        class="frost">* Без заморозки</span></label>
+                <input id="t4" type="radio" name="card-type" value="12d">
+                <label for="t4"><span class="long">12 месяцев</span><br><span class="solo">- дневная -</span><br><span
+                        class="cost">9900<span class="rubl">i</span></span><br><span
+                        class="frost">* 1 месяц заморозки</span></label>
+                <input id="t5" type="radio" name="card-type" value="12s">
+                <label for="t5"><span class="long">12 месяцев</span><br><span class="solo">- соло -</span><br><span
+                        class="cost">19900<span class="rubl">i</span></span><br><span
+                        class="frost">* 1 месяц заморозки</span></label>
+            </div>
+            <div class="content">
+                <div class="left">
+                    <img src="images/mozaika-card.jpg" alt="Клубныая карта">
+                </div>
+                <div class="right">
+                    <input type="hidden" name="form_name" value="Заказать карту">
+                    <p class="input-text"><input name="name" type="text" required placeholder="Ваше имя..."></p>
+                    <p class="input-text"><input type="tel" name="phone" id="callback_form-phone" required
+                                                 placeholder="Ваш номер телефона..."></p>
+                    <div class="form-bottom">
+                        <p class="personal-data">
+                            <input type="checkbox" required id="card_check"><label for="card_check">Я согласен на
+                            обработку персональных данных</label>
+                        </p>
+                        <p class="submit">
+                            <button type="submit" class="btn card-order-btn">Забронировать карту</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<section id="gallery">
+    <h2>Фотогалерея</h2>
+    <div class="gallery-bg">
+        <div class="wrapper">
+            <div class="gallery-slider">
+                <div class="slide">
+                    <img src="images/gallery/photo1.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="images/gallery/photo2.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="images/gallery/photo3.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="images/gallery/photo4.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="images/gallery/photo5.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="services">
+    <div class="wrapper">
+        <h2>услуги наших клубов</h2>
+        <div class="services-slider">
+            <div class="slide">
+                <img src="images/services-slider/akva.jpg" alt="Аква территория">
+                <h6>Аква территория</h6>
+                <p>Плавание полезно для людей абсолютно любой возрастной категории. Бассейн 5 на 6 метров.</p>
+            </div>
+            <div class="slide">
+                <img src="images/services-slider/vesy.jpg" alt="Зона свободных весов">
+                <h6>Зона свободных весов</h6>
+                <p>Здесь есть всё необходимое, чтобы достичь максимальных результатов</p>
+            </div>
+            <div class="slide">
+                <img src="images/services-slider/TRX.jpg" alt="Зона TRX">
+                <h6>Зона TRX</h6>
+                <p>Укрепление суставов и связок, увеличение мышечной массы, выносливости и гибкости</p>
+            </div>
+            <div class="slide">
+                <img src="images/services-slider/kardio.jpg" alt="Кардиозона">
+                <h6>Кардиозона</h6>
+                <p>Эффективное снижение веса и улучшение работы сердечно-сосудистой системы</p>
+            </div>
+            <div class="slide">
+                <img src="images/services-slider/yoga.jpg" alt="Йога">
+                <h6>Йога</h6>
+                <p>Йога - идеальны не только физическая форма, но и эмоциональное состояние</p>
+            </div>
+            <div class="slide">
+                <img src="images/services-slider/akva.jpg" alt="Аква территория">
+                <h6>Аква территория</h6>
+                <p>Плавание полезно для людей абсолютно любой возрастной категории. Бассейн 5 на 6 метров.</p>
+            </div>
+            <div class="slide">
+                <img src="images/services-slider/vesy.jpg" alt="Зона свободных весов">
+                <h6>Зона свободных весов</h6>
+                <p>Здесь есть всё необходимое, чтобы достичь максимальных результатов</p>
+            </div>
+            <div class="slide">
+                <img src="images/services-slider/TRX.jpg" alt="Зона TRX">
+                <h6>Зона TRX</h6>
+                <p>Укрепление суставов и связок, увеличение мышечной массы, выносливости и гибкости</p>
+            </div>
+            <div class="slide">
+                <img src="images/services-slider/kardio.jpg" alt="Кардиозона">
+                <h6>Кардиозона</h6>
+                <p>Эффективное снижение веса и улучшение работы сердечно-сосудистой системы</p>
+            </div>
+            <div class="slide">
+                <img src="images/services-slider/yoga.jpg" alt="Йога">
+                <h6>Йога</h6>
+                <p>Йога - идеальны не только физическая форма, но и эмоциональное состояние</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="banner">
+    <div class="wrapper">
+        <h2>Записаться на бесплатный&nbsp;визит</h2>
+        <div class="form-wrapper">
+            <form name="banner-form" id="banner-form" action="#" method="post">
+                <input type="hidden" name="form_name" value=" Записаться на визит">
+                <input name="name" type="text" required placeholder="Ваше имя...">
+                <input type="tel" name="phone" id="phone" required placeholder="Ваш номер телефона...">
+                <button name="send" class="btn" type="submit">Записаться</button>
+                <p class="personal-data">
+                    <input type="checkbox" required id="check1"><label for="check1">Я согласен на обработку персональных
+                    данных</label>
+                </p>
+            </form>
+
+        </div>
+    </div>
+</section>
+<section id="map">
+    <script type="text/javascript" charset="utf-8" async
+            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6f8a0936ac643a17a18a807cb2df7581cdaeec98a82d6c322badda5427067a3b&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=false"></script>
+</section>
+<footer id="footer">
+    <div class="wrapper">
+        <div class="footer-top">
+            <div class="left">
+                <div class="footer-logo">
+                    <a href="index.html"><img src="images/logo.png" alt="Сеть фитнес клубов Тело"></a>
+                </div>
+                <div class="about">
+                    <h5>«Тело»</h5>
+                    <ul>
+                        <li><a href="index.html#clubs">Клубы</a></li>
+                        <li><a href="#gallery">Фотогалерея</a></li>
+                        <li><a href="#footer">Наши контакты</a></li>
+                    </ul>
+                </div>
+                <div class="for-clients">
+                    <h5>Клиентам</h5>
+                    <ul>
+                        <li><a href="#cards">Клубные карты</a></li>
+                        <li><a href="#table">Расписание</a></li>
+                        <li><a href="#services">Услуги</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+                <form action="#" id="footer_form">
+                    <div class="content">
+                        <div class="choose-club">
+                            <h5>Выбрать клуб</h5>
+                            <div class="club">
+                                <input type="radio" id="footer_leto_mozaika" name="club-name" value="mozaika"><label
+                                    for="footer_leto_mozaika">
+                                <h6>Тело «Мозаика»</h6>
+                                <p>Россия, Москва, 7-я Кожуховская ул.,&nbsp;9</p>
+                            </label>
+                            </div>
+                            <div class="club">
+                                <input type="radio" id="footer_leto_schelkovo" name="club-name" value="schelkovo"><label
+                                    for="footer_leto_schelkovo">
+                                <h6>Тело «Щелково»</h6>
+                                <p>Россия, г. Щелково, ул. Советская, д.&nbsp;16</p>
+                            </label>
+                            </div>
+                        </div>
+                        <div class="call">
+                            <p>Единый телефон</p>
+                            <p class="tel">+7 (800) 555-64-47</p>
+                            <p class="input-text"><input type="tel" name="phone" id="callback_footer_form-phone"
+                                                         required="" placeholder="Ваш номер телефона..."></p>
+                            <button class="btn callback-btn" type="submit" data-popup="#callback_form">Перезвоните мне
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="left">© Фитнес-центр «Тело», 2019. Все права защищены.</div>
+            <div class="right">
+                <div class="socials">
+                    <div class="social-icon"><a href="#"><!-- <img src="images/footer-socials-vk.png" alt=""> --><i
+                            class="fa fa-vk" aria-hidden="true"></i></a></div>
+                    <div class="social-icon"><a href="#"><!-- <img src="images/footer-socials-2.png" alt=""> --><i
+                            class="fa fa-instagram" aria-hidden="true"></i></a></div>
+                    <div class="social-icon"><a href="#"><!-- <img src="images/footer-socials-youtube.png" alt=""> --><i
+                            class="fa fa-youtube-play" aria-hidden="true"></i></a></div>
+                    <div class="social-icon"><a href="#">
+                        <!-- <img src="images/footer-socials-facebook.png" alt=""> --><i class="fa fa-facebook"
+                                                                                         aria-hidden="true"></i></a>
+                    </div>
+                    <div class="social-icon"><a href="#"><!-- <img src="images/footer-socials-twitter.png" alt=""> --><i
+                            class="fa fa-twitter" aria-hidden="true"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="wrapper">
+    <a href="#" id="totop"><i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+<div class="popup" id="callback_form">
+    <div class="overlay">
+    </div>
+    <div class="form-wrapper">
+        <div class="close-form">
+            <img src="images/close-icon.png" alt="close" class="close_icon">
+        </div>
+        <div class="form-content">
+            <form name="callback-form" id="form1" action="#" method="post">
+                <h4>Обратный звонок</h4>
+                <input type="hidden" name="form_name" value=" Обратный звонок">
+                <!--  <input type="hidden" name="club" value="<?=$_GET['club-name']?>"> -->
+                <p class="input-text"><input name="name" type="text" required placeholder="Ваше имя..."></p>
+                <p class="input-text"><input type="tel" name="phone" id="callback_form1-phone" required
+                                             placeholder="Ваш номер телефона..."></p>
+                <p class="personal-data">
+                    <input type="checkbox" required id="check"><label for="check">Я согласен на обработку <br>персональных
+                    данных</label>
+
+                </p>
+                <button name="send1" class="btn btn-send" type="submit">Перезвоните мне</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+<div class="popup" id="free_visit_form">
+    <div class="overlay">
+    </div>
+    <div class="form-wrapper">
+        <div class="close-form">
+            <img src="images/close-icon.png" alt="close" class="close_icon">
+        </div>
+        <div class="form-content">
+            <form name="free-visit-form" id="form2" action="#" method="post">
+                <h4>Записаться на визит</h4>
+                <input type="hidden" name="form_name" value=" Записаться на визит">
+                <p class="input-text"><input name="name" type="text" required placeholder="Ваше имя..."></p>
+                <p class="input-text"><input type="tel" name="phone" id="callback_form2-phone" required
+                                             placeholder="Ваш номер телефона..."></p>
+                <p class="personal-data">
+                    <input type="checkbox" required id="check2"><label for="check2">Я согласен на обработку <br>персональных
+                    данных</label>
+
+                </p>
+                <button name="send1" class="btn btn-send" type="submit">записаться</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+<div class="popup" id="thanks">
+    <div class="overlay">
+    </div>
+    <div class="form-wrapper">
+        <div class="close-form">
+            <img src="images/close-icon.png" alt="close" class="close_icon">
+        </div>
+        <div class="form-content">
+            <h4>Спасибо!</h4>
+            <p>Ваша заявка отправлена. <br> Мы свяжемся с вами в ближайшее время.</p>
+            <button class="btn close-btn">OK</button>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
