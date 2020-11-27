@@ -1,31 +1,18 @@
 const burger = () => {
-  //style
-  const style = document.createElement("style");
-  style.id = "burger-style";
-  style.textContent = `
-    .top_fixed {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    }
+  const popupMenu = document.querySelector(".popup-menu");
 
-    `;
-  document.head.append(style);
-
-  window.addEventListener("scroll", () => {
+  const flyBurger = () => {
     const topMenu = document.querySelector(".top-menu");
-    const x = window.innerWidth;
 
-    if (window.pageYOffset > 190 && x < 768) {
+    if (window.pageYOffset > 190 && window.innerWidth < 768) {
       topMenu.style.position = "fixed";
     } else {
       topMenu.style.position = "";
     }
-  });
-
+  };
+  window.addEventListener("scroll", flyBurger);
+  window.addEventListener("resize", flyBurger);
   //popupMenu
-  const popupMenu = document.querySelector(".popup-menu");
   document.addEventListener("click", event => {
     const target = event.target;
     if (target.closest(".hidden-large > img")) {
@@ -41,3 +28,4 @@ const burger = () => {
 };
 
 export default burger;
+

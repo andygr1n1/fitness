@@ -45,8 +45,34 @@ import carousel from "./modules/carousel.js";
 import burger from "./modules/burger.js";
 import photoGallery from "./modules/photoGallery.js";
 import mainSlider from "./modules/mainSlider.js";
+import scrollTop from "./modules/scrollTop.js";
+import selectClub from "./modules/selectClub.js";
+import modalWindows from "./modules/modalWindows.js";
 
-carousel(); //9
+carousel(); 
 photoGallery();
-burger(); //14, 15, 16
+burger();
 mainSlider();
+scrollTop();
+selectClub();
+modalWindows();
+
+//1 
+//2
+//3
+//4
+//!5
+//6
+//7
+//!8
+//9
+//10
+//*11
+//!12
+//!13
+//14
+//15
+//16
+//17
+//18
+//*19
