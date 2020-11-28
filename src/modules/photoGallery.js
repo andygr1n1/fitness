@@ -11,8 +11,18 @@ const photoGallery = () => {
         display: none;
     }
 
+    .photo-gallery-slider {
+      height: 400px;
+    }
+
       .photo-gallery-image-active {
-        display: flex;
+      display: flex;
+      width: 700px !important;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;        
     }
 
         .photo-gallery-wrapper {
@@ -75,6 +85,22 @@ const photoGallery = () => {
     
     @media (max-width: 768px) {
 
+        .photo-gallery-slider {
+      height: auto;
+    }
+
+      .photo-gallery-image-active {
+      display: flex;
+      width: 700px !important;
+      position: static;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;        
+    }
+
+      
+
     .photo-gallery-left {
         display: none;
     }
@@ -82,6 +108,7 @@ const photoGallery = () => {
     .photo-gallery-right {
         display: none;
     }
+    
 }
 
     `;
@@ -152,23 +179,23 @@ const photoGallery = () => {
           "photo-gallery-image-active"
         )
       ) {
+        images[images.length - 1].classList.add("photo-gallery-images");
+        images[0].classList.add("photo-gallery-image-active");
+        sliderDots[0].classList.add("photo-gallery-dot-active");
         images[images.length - 1].classList.remove(
           "photo-gallery-image-active"
         );
-        images[images.length - 1].classList.add("photo-gallery-images");
-        images[0].classList.add("photo-gallery-image-active");
         sliderDots[images.length - 1].classList.remove(
           "photo-gallery-dot-active"
         );
-        sliderDots[0].classList.add("photo-gallery-dot-active");
         return;
       }
       if (images[i].classList.contains("photo-gallery-image-active")) {
-        images[i].classList.remove("photo-gallery-image-active");
         images[i].classList.add("photo-gallery-images");
         images[i + 1].classList.add("photo-gallery-image-active");
-        sliderDots[i].classList.remove("photo-gallery-dot-active");
         sliderDots[i + 1].classList.add("photo-gallery-dot-active");
+        sliderDots[i].classList.remove("photo-gallery-dot-active");
+        images[i].classList.remove("photo-gallery-image-active");
         return;
       }
     }
