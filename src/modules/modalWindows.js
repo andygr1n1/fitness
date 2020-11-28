@@ -5,7 +5,6 @@ const modalWindows = () => {
 
   document.addEventListener("click", event => {
     const target = event.target;
-    console.log(target);
     if (target.closest(".free-visit")) {
       freeVisitForm.style.display = "block";
     }
