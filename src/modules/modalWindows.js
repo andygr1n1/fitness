@@ -1,6 +1,7 @@
 const modalWindows = () => {
   const freeVisitForm = document.getElementById("free_visit_form"),
     callbackForm = document.getElementById("callback_form"),
+    thanks = document.getElementById("thanks"),
     gift = document.getElementById("gift");
 
   document.addEventListener("click", event => {
@@ -18,16 +19,21 @@ const modalWindows = () => {
 
     if (
       target.closest(
-        "#gift > .overlay, #gift > .form-wrapper > .close-form .close_icon, .close-btn"
+        "#gift > .overlay, #gift > .form-wrapper > .close-form .close_icon, #gift > .form-wrapper > .form-content > .close-btn"
       )
     ) {
       gift.style.display = "none";
       document.querySelector(".fixed-gift").remove();
     }
 
-    if (target.closest(".overlay, .close_icon")) {
+    if (
+      target.closest(
+        ".overlay, .close_icon,  #thanks > .form-wrapper > .form-content > .close-btn"
+      )
+    ) {
       freeVisitForm.style.display = "none";
       callbackForm.style.display = "none";
+      thanks.style.display = "none";
     }
   });
 };
