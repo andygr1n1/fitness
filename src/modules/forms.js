@@ -64,11 +64,30 @@ const forms = () => {
         transform: scale(1);
       }
     }
+
+    .footer-error {
+      position: absolute;
+      right: 0%;
+    }
+
+    .footer-loader {
+      position: absolute;
+      display: flex;
+      right: 2%;
+    }
     `;
 
   document.head.append(style);
 
-  const loadMessage = `
+  const thanks = document.getElementById("thanks"),
+    freeVisitForm = document.getElementById("free_visit_form"),
+    callbackForm = document.getElementById("callback_form"),
+    form1 = document.getElementById("form1"),
+    form2 = document.getElementById("form2"),
+    bannerForm = document.getElementById("banner-form"),
+    footerForm = document.getElementById("footer_form");
+
+  let loadMessage = `
                         <div class="loading-message">
                           <div class='sk-chasing-dots'>
                           <div class='sk-child sk-dot-1'></div>
@@ -76,24 +95,15 @@ const forms = () => {
                           </div>
                           Идёт отправка
                         </div>
-                      `,
-    thanks = document.getElementById("thanks"),
-    freeVisitForm = document.getElementById("free_visit_form"),
-    callbackForm = document.getElementById("callback_form"),
-    form1 = document.getElementById("form1"),
-    form2 = document.getElementById("form2"),
-    bannerForm = document.getElementById("banner-form");
-
+                      `;
   const statusMessage = document.createElement("div");
   statusMessage.style.cssText = "font-size: 2rem";
   statusMessage.style.color = "#19b5fe";
 
+  //TODO submit
   document.addEventListener("submit", event => {
     const target = event.target;
     event.preventDefault();
-    if (!target.matches("#form1, #form2, #banner-form")) {
-      return;
-    }
 
     let formTransformator, checker, name, tel;
     if (target === form1) {
@@ -109,10 +119,16 @@ const forms = () => {
       checker = document.getElementById("check2");
     }
     if (target === bannerForm) {
+      console.log(bannerForm);
       formTransformator = bannerForm;
       tel = document.getElementById("phone");
       name = document.getElementById("banner-form-name");
       checker = document.getElementById("check1");
+    }
+
+    if (target === footerForm) {
+      formTransformator = footerForm;
+      tel = document.getElementById("callback_footer_form-phone");
     }
 
     const clearForms = () => {
@@ -120,7 +136,15 @@ const forms = () => {
         elem.value = "";
       });
       statusMessage.innerHTML = "";
-      checker.checked = false;
+      if (checker) {
+        checker.checked = false;
+      }
+      if (document.getElementById("footer_leto_mozaika").checked === true) {
+        document.getElementById("footer_leto_mozaika").checked = false;
+      }
+      if (document.getElementById("footer_leto_schelkovo").checked === true) {
+        document.getElementById("footer_leto_schelkovo").checked = false;
+      }
     };
 
     //!f/animation
@@ -179,23 +203,58 @@ const forms = () => {
     //!f-animation ends
 
     formTransformator.append(statusMessage);
-    if (name.value === "") {
-      statusMessage.innerHTML = `<div class="error-message"> Необходимо указать имя </div>`;
-      const errorMsg = document.querySelector(".error-message");
-      msgAnimate(errorMsg);
-      return;
+
+    if (
+      formTransformator === form1 ||
+      formTransformator === form2 ||
+      formTransformator === bannerForm
+    ) {
+      if (name.value === "") {
+        statusMessage.innerHTML = `<div class="error-message"> Необходимо указать имя</div>`;
+        const errorMsg = document.querySelector(".error-message");
+        msgAnimate(errorMsg);
+        return;
+      }
+      if (tel.value.length !== 16) {
+        statusMessage.innerHTML = `<div class="error-message"> Необходимо указать номер телефона</div>`;
+        const errorMsg = document.querySelector(".error-message");
+        msgAnimate(errorMsg);
+        return;
+      }
+      if (checker.checked === false) {
+        statusMessage.innerHTML = `<div class="error-message"> необходимо согласиться на обработку персональных данных</div>`;
+        const errorMsg = document.querySelector(".error-message");
+        msgAnimate(errorMsg);
+        return;
+      }
     }
-    if (tel.value.length !== 16) {
-      statusMessage.innerHTML = `<div class="error-message"> Необходимо указать номер телефона </div>`;
-      const errorMsg = document.querySelector(".error-message");
-      msgAnimate(errorMsg);
-      return;
-    }
-    if (checker.checked === false) {
-      statusMessage.innerHTML = `<div class="error-message"> необходимо согласиться на обработку персональных данных </div>`;
-      const errorMsg = document.querySelector(".error-message");
-      msgAnimate(errorMsg);
-      return;
+
+    if (formTransformator === footerForm) {
+      loadMessage = `
+                        <div class="loading-message footer-loader">
+                          <div class='sk-chasing-dots'>
+                          <div class='sk-child sk-dot-1'></div>
+                          <div class='sk-child sk-dot-2'></div>
+                          </div>
+                          Идёт отправка
+                        </div>
+                      `;
+      if (tel.value.length !== 16) {
+        statusMessage.innerHTML = `<div class="error-message footer-error"> Необходимо указать номер телефона </div>`;
+        const errorMsg = document.querySelector(".error-message");
+        msgAnimate(errorMsg);
+        return;
+      }
+
+      if (
+        document.getElementById("footer_leto_mozaika").checked === false &&
+        document.getElementById("footer_leto_schelkovo").checked === false
+      ) {
+        statusMessage.innerHTML = `<div class="error-message footer-error"> необходимо выбрать клуб</div>`;
+        const errorMsg = document.querySelector(".error-message");
+        msgAnimate(errorMsg);
+        return;
+      }
     }
 
     statusMessage.innerHTML = loadMessage;

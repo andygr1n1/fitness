@@ -176,7 +176,6 @@ const photoGallery = () => {
 
   galleryBg.addEventListener("click", event => {
     const target = event.target;
-    console.log(target);
 
     //!left
     if (target.closest(".photo-gallery-left")) {
@@ -206,7 +205,6 @@ const photoGallery = () => {
   });
 
   let interval;
-
   interval = setInterval(nextSlide, 3000);
 
   galleryBg.addEventListener("mouseover", event => {
