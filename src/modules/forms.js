@@ -119,7 +119,6 @@ const forms = () => {
       checker = document.getElementById("check2");
     }
     if (target === bannerForm) {
-      console.log(bannerForm);
       formTransformator = bannerForm;
       tel = document.getElementById("phone");
       name = document.getElementById("banner-form-name");
