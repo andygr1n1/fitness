@@ -131,7 +131,7 @@ const forms = () => {
       const timer = () => {
         animation = requestAnimationFrame(timer);
         selector.style.display = "flex";
-        opacityCounter += 0.01;
+        opacityCounter += 0.07;
 
         selector.style.opacity = `${opacityCounter}`;
 
@@ -153,7 +153,7 @@ const forms = () => {
       const timer2 = () => {
         animation = requestAnimationFrame(timer2);
         selector.style.display = "flex";
-        opacityCounter += 0.01;
+        opacityCounter += 0.1;
 
         selector.style.opacity = `${opacityCounter}`;
 
