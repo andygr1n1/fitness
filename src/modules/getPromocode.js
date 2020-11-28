@@ -1,4 +1,3 @@
-"use strict";
 
 const getPromocode = () => {
   const oneMonth = document.getElementById("m1"),

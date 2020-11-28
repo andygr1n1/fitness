@@ -78,14 +78,17 @@ const forms = () => {
     }
 
     .promo-error {
-      position: absolute;
-      right: 10%;
+        position: absolute;
+        left: 0;
+        right: 0;
     }
 
     .promo-loader {
-          position: absolute;
-          display: flex;
-          right: 10%;
+        position: absolute;
+        right: 50%;
+   
+        margin-left: auto;
+        margin-right: auto;
     }
 
 
