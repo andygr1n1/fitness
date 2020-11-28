@@ -1,6 +1,7 @@
 
 const scrollTop = () => {
   const toTop = document.getElementById("totop");
+  toTop.style.cursor = "pointer";
 
   toTop.style.display = "none";
   window.addEventListener("scroll", () => {
