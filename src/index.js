@@ -50,7 +50,7 @@ import mainSlider from "./modules/mainSlider.js";
 import scrollTop from "./modules/scrollTop.js";
 import selectClub from "./modules/selectClub.js";
 import modalWindows from "./modules/modalWindows.js";
-import calculator from "./modules/calculator.js";
+import getPromocode from "./modules/getPromocode.js";
 
 const phoneInput = [...document.querySelectorAll('[type="tel"]')].forEach(x => {
   x.classList.add("phoneMask");
@@ -67,7 +67,6 @@ const ruInput = [...document.querySelectorAll('[type="text"]')].forEach(x => {
 
 maskPhone(".phoneMask", "+7(___)___-__-__");
 forms();
-calculator();
 carousel();
 photoGallery();
 burger();
@@ -75,23 +74,4 @@ mainSlider();
 scrollTop();
 selectClub();
 modalWindows();
-
-//1
-//2
-//3
-//4
-//!5
-//6
-//7
-//!8
-//9
-//10
-//*11
-//!12
-//!13
-//14
-//15
-//16
-//17
-//18
-//*19
+getPromocode();

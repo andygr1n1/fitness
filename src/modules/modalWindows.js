@@ -9,7 +9,7 @@ const modalWindows = () => {
     if (target.closest(".free-visit")) {
       freeVisitForm.style.display = "block";
     }
-    if (target.closest(".callback-btn")) {
+    if (target.closest(".right > .call > .callback-btn")) {
       callbackForm.style.display = "block";
     }
 
