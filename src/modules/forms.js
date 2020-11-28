@@ -3,6 +3,7 @@ const forms = () => {
   const style = document.createElement("style");
   style.id = "forms-style";
   style.textContent = `
+  
     .loading-message{
         margin: 5px;
         color: green;
@@ -75,6 +76,27 @@ const forms = () => {
       display: flex;
       right: 2%;
     }
+
+    .promo-error {
+      position: absolute;
+      right: 10%;
+    }
+
+    .promo-loader {
+          position: absolute;
+          display: flex;
+          right: 10%;
+    }
+
+
+    @media (max-width: 767px) {
+    .promo-error, .promo-loader, .footer-error, .footer-loader {
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    }
     `;
 
   document.head.append(style);
@@ -85,6 +107,7 @@ const forms = () => {
     form1 = document.getElementById("form1"),
     form2 = document.getElementById("form2"),
     bannerForm = document.getElementById("banner-form"),
+    formPromo = document.getElementById("card_order"),
     footerForm = document.getElementById("footer_form");
 
   let loadMessage = `
@@ -128,6 +151,13 @@ const forms = () => {
     if (target === footerForm) {
       formTransformator = footerForm;
       tel = document.getElementById("callback_footer_form-phone");
+    }
+
+    if (target === formPromo) {
+      formTransformator = formPromo;
+      tel = document.getElementById("callback_form-phone");
+      name = document.getElementById("promo-form-name");
+      checker = document.getElementById("card_check");
     }
 
     const clearForms = () => {
@@ -228,6 +258,29 @@ const forms = () => {
       }
     }
 
+    if (
+      formTransformator === formPromo
+    ) {
+      if (name.value === "") {
+        statusMessage.innerHTML = `<div class="error-message promo-error"> Необходимо указать имя</div>`;
+        const errorMsg = document.querySelector(".error-message");
+        msgAnimate(errorMsg);
+        return;
+      }
+      if (tel.value.length !== 16) {
+        statusMessage.innerHTML = `<div class="error-message promo-error"> Необходимо указать номер телефона</div>`;
+        const errorMsg = document.querySelector(".error-message");
+        msgAnimate(errorMsg);
+        return;
+      }
+      if (checker.checked === false) {
+        statusMessage.innerHTML = `<div class="error-message promo-error"> необходимо согласиться на обработку персональных данных</div>`;
+        const errorMsg = document.querySelector(".error-message");
+        msgAnimate(errorMsg);
+        return;
+      }
+    }
+
     if (formTransformator === footerForm) {
       loadMessage = `
                         <div class="loading-message footer-loader">
@@ -254,6 +307,18 @@ const forms = () => {
         msgAnimate(errorMsg);
         return;
       }
+    }
+
+    if (formTransformator === formPromo) {
+      loadMessage = `
+                        <div class="loading-message promo-loader">
+                          <div class='sk-chasing-dots'>
+                          <div class='sk-child sk-dot-1'></div>
+                          <div class='sk-child sk-dot-2'></div>
+                          </div>
+                          Идёт отправка
+                        </div>
+                      `;
     }
 
     statusMessage.innerHTML = loadMessage;
