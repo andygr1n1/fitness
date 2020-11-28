@@ -34,14 +34,14 @@ const photoGallery = () => {
     .photo-gallery-left {
         display: block;
         top: 40%;
-        left: 7%;
+        left: 6.5%;
         cursor: pointer;
     }
 
     .photo-gallery-right {
         display: blockl;
         top: 40%;
-        left: 95%;
+        left: 89%;
         cursor: pointer;
     }
 

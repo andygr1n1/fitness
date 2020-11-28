@@ -28,7 +28,7 @@ elementClosest(window);
         var argArr = Array.prototype.slice.call(arguments),
           docFrag = document.createDocumentFragment();
 
-        argArr.forEach(function (argItem) {          
+        argArr.forEach(function (argItem) {
           var isNode = argItem instanceof Node;
           docFrag.appendChild(
             isNode ? argItem : document.createTextNode(String(argItem))
@@ -41,6 +41,8 @@ elementClosest(window);
   });
 })([Element.prototype, Document.prototype, DocumentFragment.prototype]);
 
+import maskPhone from "./modules/maskPhone.js";
+import forms from "./modules/forms.js";
 import carousel from "./modules/carousel.js";
 import burger from "./modules/burger.js";
 import photoGallery from "./modules/photoGallery.js";
@@ -49,7 +51,22 @@ import scrollTop from "./modules/scrollTop.js";
 import selectClub from "./modules/selectClub.js";
 import modalWindows from "./modules/modalWindows.js";
 
-carousel(); 
+const phoneInput = [...document.querySelectorAll('[type="tel"]')].forEach(x => {
+  x.classList.add("phoneMask");
+});
+const ruInput = [...document.querySelectorAll('[type="text"]')].forEach(x => {
+  x.oninput = () => {
+    if (x.placeholder === "Промокод") {
+      x.value = x.value.replace(/[^а-яё0-9]/gi, "");
+    } else {
+      x.value = x.value.replace(/[^а-яё]/gi, "");
+    }
+  };
+});
+
+maskPhone(".phoneMask", "+7(___)___-__-__");
+forms();
+carousel();
 photoGallery();
 burger();
 mainSlider();
@@ -57,7 +74,7 @@ scrollTop();
 selectClub();
 modalWindows();
 
-//1 
+//1
 //2
 //3
 //4
