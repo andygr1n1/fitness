@@ -9,6 +9,7 @@ const getPromocode = () => {
     cardLetoMozaika = document.getElementById("card_leto_mozaika"),
     cardLetoSchelkovo = document.getElementById("card_leto_schelkovo"),
     telo = "ТЕЛО2020";
+    console.log();
   if (cardLetoMozaika) {
     document.addEventListener("click", () => {
       if (cardLetoMozaika.checked && inputPromo.value !== telo) {

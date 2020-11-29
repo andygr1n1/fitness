@@ -111,7 +111,8 @@ const forms = () => {
     form2 = document.getElementById("form2"),
     bannerForm = document.getElementById("banner-form"),
     formPromo = document.getElementById("card_order"),
-    footerForm = document.getElementById("footer_form");
+    footerForm = document.getElementById("footer_form"),
+    inputPromo = document.querySelector('[placeholder="Промокод"');
 
   let loadMessage = `
                         <div class="loading-message">
@@ -164,9 +165,6 @@ const forms = () => {
     }
 
     const clearForms = () => {
-      document.querySelectorAll("input").forEach(elem => {
-        elem.value = "";
-      });
       statusMessage.innerHTML = "";
       if (checker) {
         checker.checked = false;
@@ -177,6 +175,12 @@ const forms = () => {
       if (document.getElementById("footer_leto_schelkovo").checked === true) {
         document.getElementById("footer_leto_schelkovo").checked = false;
       }
+      document.querySelectorAll('[name="name"]').forEach(x => {
+        x.value = "";
+      });
+      document.querySelectorAll('[type="tel"]').forEach(x => {
+        x.value = "";
+      });
     };
 
     //!f/animation
@@ -261,9 +265,7 @@ const forms = () => {
       }
     }
 
-    if (
-      formTransformator === formPromo
-    ) {
+    if (formTransformator === formPromo) {
       if (name.value === "") {
         statusMessage.innerHTML = `<div class="error-message promo-error"> Необходимо указать имя</div>`;
         const errorMsg = document.querySelector(".error-message");
@@ -334,7 +336,7 @@ const forms = () => {
     const networkData = JSON.stringify(bodyObj);
 
     const postData = networkData =>
-      fetch("server.php", {
+      fetch("./server.php", {
         method: "POST",
         header: { "Content-Type": "application/json" },
         body: JSON.stringify(networkData),
